@@ -1,0 +1,95 @@
+
+
+.homepage__section {
+  transition: all 4s;
+  padding: em(100px) 0;
+  position: relative;
+  overflow: hidden;
+  &:first-of-type, &:last-of-type {
+    color: $white;
+      background-color: palette(blue,dark-blue);
+    p {
+      color: darken($white,30%);
+    }
+  }
+
+
+  h2 {
+      margin-top: 0;
+      &::before {
+        content: "";
+        display: block;
+        margin-bottom: em(20px);
+        height: 10px;
+        width: 40px;
+        background: darken($white,30%);
+      }
+    }
+
+}
+.dribbble {
+  h2 {
+    max-width: 850px;
+    a {
+      color: $dribbble-pink;
+    }
+    span {
+      display: inline-block;
+
+    }
+    .shadow {
+      display: inline-block;
+      border-radius: 5px;
+      position: relative;
+      left: -44px;
+      top: -200px;
+      width: 40px;
+      height: 10px;
+      box-shadow: 0 214px 10px #dedede;
+      z-index: -20;
+      background: transparent;
+      animation: shadow 2s ease-out infinite;
+    }
+    .icon-social-dribbble {
+      animation: bounce 2s ease-out infinite;
+    }
+  }
+}
+.dribbble-container {
+
+  div {
+    background-color: $highlight;
+    height: 10px;
+    margin-bottom: 20px;
+  }
+}
+.svg-section {
+  position: absolute;
+  width: 250px;
+  bottom: -25%;
+  right: 0;
+  &--left, &--right {
+    @extend .svg-section;
+  }
+  @include mq(medium) {
+    width: 60%;
+    bottom: -5%;
+    &--left {
+    left: -10%;
+    }
+    &--right {
+      right: -10%;
+    }
+  }
+  @include mq(large) {
+    max-width: 600px;
+    width: 50%;
+    bottom: -15%;
+    &--left {
+    left: 0;
+    }
+    &--right {
+      right: 0;
+    }
+  }
+}

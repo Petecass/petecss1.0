@@ -1,0 +1,23 @@
+/*========================================
+Functions
+========================================*/
+
+// Grid Context
+
+@function g-context($g-col-width,$g-col-count,$g-gutter-width){
+  $g-context : ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
+  @return $g-context;
+}
+
+
+// Em conversion function
+
+@function em($target, $context: $font-base--size) {
+	@return ($target / $context) * 1em;
+}
+
+// Color palette
+
+@function palette($palette, $shade: 'base') {
+	@return map-get(map-get($color-palettes, $palette), $shade);
+}

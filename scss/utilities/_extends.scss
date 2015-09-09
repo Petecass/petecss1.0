@@ -1,0 +1,39 @@
+
+
+
+// clearfix
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// flex container
+
+%flex-container {
+  
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// center text
+
+%center-content {
+  text-align: center;
+}
+
+// centered - content
+
+%centered {
+  margin-right: auto;
+  margin-left: auto;
+  float: none;
+}

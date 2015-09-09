@@ -1,0 +1,68 @@
+// ==========================================================================
+// Grid Container
+// ==========================================================================
+
+.grid {
+  @extend %clearfix;
+  @extend %centered;
+  width: 90%;
+
+  //  make nested grid container 100%
+  [class*="grid__col--"] > & {
+    width: 100%;
+  }
+
+  // set max-width for grid container
+
+   @include mq(large) {
+     max-width: $g-cont-max-width;
+   }
+}
+
+
+
+// ==========================================================================
+// Grid Columns
+// ==========================================================================
+
+
+// Calculate grid columns
+@include mq(medium) {
+  @for $i from 1 through $g-col-count {
+
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global ;
+    $target:  ($g-col-width * $i ) + ($g-gutter-width * ($i - 1));
+    // Generate colomn modifier classes
+    .grid__col--#{$i} {
+      width: percentage($target/ $context);
+    }
+    .grid__col--offset-left-#{$i} {
+      margin-left: percentage($target/ $context);
+    }
+    .grid__col--offset-right-#{$i} {
+      margin-right: percentage($target/ $context);
+  }
+ }
+}
+
+// Column styles
+
+[class^="grid__col--"] {
+  @media (min-width: 1px) and (max-width: 768px){
+    // margin-top: em(12px);
+    // margin-bottom: em(12px);
+  }
+  @include mq(medium) {
+    @include doubly(percentage($g-gutter-width / $context));
+    float: left;
+    min-height: 1px;
+
+    &:first-of-type{
+      padding-left: 0;
+    }
+    &:last-of-type {
+      float: right;
+      padding-right: 0;
+    }
+  }
+}

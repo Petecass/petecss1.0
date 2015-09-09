@@ -1,0 +1,12 @@
+// bouncing dribbble ball
+
+@keyframes bounce {
+  50% {
+    transform: translateY(10px) scaleX(1.2);
+  }
+}
+@keyframes shadow {
+  50% {
+    transform:scaleX(1.2);
+  }
+}

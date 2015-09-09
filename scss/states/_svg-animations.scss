@@ -1,0 +1,27 @@
+.svg-section--left , .svg-section--right {
+  .st0 {
+    stroke: $white;
+    stroke-dasharray: 600px;
+    stroke-dashoffset: 600px;
+    animation: line-drawing 8s infinite;
+  }
+}
+.svg-section--left {
+  .st0 {
+    stroke-dasharray: 2000px;
+    stroke-dashoffset: 2000px;
+  }
+}
+
+@keyframes line-drawing {
+
+  80%{
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    // stroke-dasharray: 0;
+
+    opacity: 0;
+  }
+}

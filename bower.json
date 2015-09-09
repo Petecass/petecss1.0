@@ -1,0 +1,26 @@
+{
+  "name": "PeteCss1.0",
+  "version": "1.0",
+  "authors": [
+    "Pete Cass <pete.h.cass@gmail.com>"
+  ],
+  "description": "website for PeteCSS",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "petecss.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animsition": "~3.6.0",
+    "devicon": "konpa/devicon",
+    "scrollreveal": "https://github.com/jlmakes/scrollReveal.js.git#~2.3.2"
+  }
+}

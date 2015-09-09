@@ -1,0 +1,82 @@
+
+
+// Background Image
+
+@mixin image-bg($file-name, $overlay, $color: $image-overlay-default, $directory: $img-directory, $position : center ) {
+  $color : transparentize($color, 0.3);
+  @if $overlay == "yes" {
+    background: -webkit-linear-gradient($color,
+				       $color),
+				       url('../#{$directory}/#{$file-name}') no-repeat;
+  	background: linear-gradient($color,
+  		      	 $color),
+  		      	 url('../#{$directory}/#{$file-name}') no-repeat;
+  	background-size: cover;
+    background-position: $position;
+  }
+  @else {
+    background: url('../#{$directory}/#{$file-name}') no-repeat;
+    background-size: cover;
+    background-position: $position;
+
+  }
+}
+
+// empty pseudo element
+@mixin pseudo-empty ($height, $width) {
+  &:before {
+    content: "";
+    height: $height;
+    width:$width;
+    display: inline-block;
+    @content;
+  }
+}
+
+// Generate background colors
+
+@mixin bg-color($map) {
+  @each $theme, $color in $map {
+    &--#{$theme} {
+      background: $color;
+    }
+  }
+}
+
+// Media query
+
+@mixin mq($break) {
+  @if $break == "x-small" {
+    @media (max-width: $brkpoint-xs) {
+      @content;
+    }
+  }
+  @else if $break == "small" {
+    @media (min-width: $brkpoint-s) {
+      @content;
+    }
+  }
+  @else if $break == "medium" {
+    @media (min-width: $brkpoint-md) {
+      @content;
+    }
+  }
+  @else if $break == "large" {
+    @media (min-width: $brkpoint-l) {
+      @content;
+    }
+  }
+  @else if $break == "x-large" {
+    @media (min-width: $brkpoint-xl) {
+      @content;
+    }
+  }
+
+}
+
+@mixin doubly($margin: 1em) {
+	& + & {
+	  margin-left: $margin;
+    @content;
+	}
+}

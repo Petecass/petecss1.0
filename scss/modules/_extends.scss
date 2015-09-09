@@ -1,0 +1,11 @@
+
+%uppercase {
+  text-transform: uppercase;
+  letter-spacing: .3em;
+}
+
+%highlighted-link {
+  color: $highlight;
+  text-decoration: underline;
+  font-style: italic;
+}
