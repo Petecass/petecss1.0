@@ -7,7 +7,7 @@
 }
 
 .header__about {
-  @include image-bg('sunset.jpg',"no", $color: $dark-background, $position: center);
+  @include image-bg('sunset.jpg',"yes", $color: $dark-background, $position: center);
   height: 400px;
   .logo {
     @media (max-width: $brkpoint-s) {
@@ -26,12 +26,11 @@
 
 .title--jumbo {
   // @extend %vert-align;
-  color: inherit;
+  color: $white;
   padding: 0 5%;
   margin-top: 25%;
   h4 {
     font-family: $font-family--body;
-
   }
   h1 {
     @extend %centered;
@@ -42,7 +41,7 @@
     font-size: 1em;
   }
   @include mq(medium) {
-    margin-top: 8%;
+    margin-top: 4%;
     text-align: center;
     h1 {
       font-size: 3.998em;
