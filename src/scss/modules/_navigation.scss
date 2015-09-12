@@ -1,67 +1,37 @@
 // ================================
 // Navigation Styling
 // ================================
-.nav--fullscreen {
-  // opacity: 0;
-  // transform: translateY(-150%);
-  top: -100%;
-  height: 100vh;
-  width: 100%;
-  background-color: $dark-background;
-  position: absolute;
-  color: $text-image;
-  z-index: 100;
-  padding-top: 10vh;
-  text-align: center;
-  transition: all 1s;
-  // &.fs {
-  //   opacity: 1;
-  //   transform: translateY(0);
-  // }
-
-  & .btn--important {
-    margin-top: 15vh;
-    margin-bottom: 15vh;
-  }
-  & .nav__item {
-    font-size: 1.414em;
-
-  }
-  & .social-media__icons {
-    font-size: 1.999em;
-  }
-  .nav,.social-media {
-    @extend %centered;
-    width:90%;
-    display: block;
-  }
-
-
-}
-
-
 
 .navbar {
   @extend %clearfix ;
   @extend %centered;
-  width: 90%;
   color: $text-image;
-  padding-top: em(20px);
-  padding-bottom: em(20px);
+  padding: em(20px) 5%;
   font-family: $font-family--heading;
+  position: relative;
+  @media ( max-width: $brkpoint-md ) {
+    background-color: transparentize($dark-background, .6);
+    line-height: 0;
+
+  }
 }
 
 .logo {
     @include pseudo-empty(40px,40px) {
     @include image-bg("logomark_white.png","no");
-
     transform: translateY(10px);
-  }
-  @include mq(small) {
-    display: inline-block;
-  }
-  display: none;
-  float: left;
+    }
+
+    position: absolute;
+    top: 130px;
+    left:5%;
+    display: inline;
+    @include mq(small) {
+    position: static;
+    top:0;
+    }
+
+    float: left;
 
 }
 

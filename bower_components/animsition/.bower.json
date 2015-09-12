@@ -29,6 +29,5 @@
   },
   "_source": "git://github.com/blivesta/animsition.git",
   "_target": "~3.6.0",
-  "_originalSource": "animsition",
-  "_direct": true
+  "_originalSource": "animsition"
 }

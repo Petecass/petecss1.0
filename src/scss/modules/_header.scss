@@ -7,8 +7,21 @@
 }
 
 .header__about {
-  @include image-bg('sunset.jpg',"yes", $color: $dark-background, $position: center);
+  @include image-bg('sunset.jpg',"no", $color: $dark-background, $position: center);
   height: 400px;
+  .logo {
+    @media (max-width: $brkpoint-s) {
+      display: none;
+    }
+  }
+
+}
+.about__title {
+  @extend %centered;
+  color: $white;
+  text-align: center;
+  width: 80%;
+
 }
 
 .title--jumbo {
